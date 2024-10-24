@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management CRUD</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://img.freepik.com/premium-photo/blurred-hotel-hall-with-contemporary-design_1235831-57207.jpg?semt=ais_hybrid');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            color: #4a4a4a;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 3rem;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .btn-primary {
+            background-color: #5bc0de;
+            border: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #31b0d5;
+        }
+
+        table {
+            margin-top: 20px;
+        }
+
+        th {
+            background-color: #5bc0de;
+            color: white;
+            text-align: center;
+        }
+
+        td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .form-control {
+            border-radius: 20px;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        input[type="text"]::placeholder {
+            color: #aaa;
+        }
+
+        .table td img {
+            width: 80px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .actions button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>Hotel Data</h1>
+        <form id="addHotelForm" class="mb-4">
+            <div class="form-group">
+                <input type="text" id="hotelName" class="form-control" placeholder="Hotel Name" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="hotelImage" class="form-control" placeholder="Hotel Image URL" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Add Hotel</button>
+        </form>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Hotel Name</th>
+                    <th>Image</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="hotelTableBody">
+                <!-- Insert data jscript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="./hotel.js"></script>
+</body>
+
+</html>
