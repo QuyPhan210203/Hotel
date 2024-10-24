@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() { 
     const apiUrl = 'https://671a20b5acf9aa94f6a94357.mockapi.io/hotel/ht';
     const tableBody = document.getElementById('hotelTableBody');
     const addHotelForm = document.getElementById('addHotelForm');
@@ -8,21 +8,18 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Fetch and display data
-    function fetchData(callback) {
-        fetch(apiUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                callback(null, data);
-            })
-            .catch(error => {
-                callback(error, null);
-            });
+    // async/await
+    async function fetchData(callback) {
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            callback(null, data);
+        } catch (error) {
+            callback(error, null);
+        }
     }
 
     function displayData(error, data) {
